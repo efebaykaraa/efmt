@@ -1,3 +1,5 @@
-module efmt
+module github.com/efexplose/efmt
 
-go 1.21.6
+go 1.17
+
+require golang.org/x/sys
