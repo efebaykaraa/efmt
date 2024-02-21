@@ -18,5 +18,10 @@ func (p *Printer) Printf(format string, a ...any) {
 }
 
 func (p *Printer) Print(a ...any) {
-	fmt.Print(p.prefix, fmt.Sprint(a...))
+	format := fmt.Sprint(a...)
+	format = strings.ReplaceAll(format, "\n", "\n"+p.prefix)
+	if len(format) > 0 && format[len(format)-len(p.prefix):] == p.prefix {
+		format = format[:len(format)-len(p.prefix)]
+	}
+	fmt.Print(p.prefix + format)
 }

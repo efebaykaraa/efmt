@@ -64,9 +64,12 @@ func colorizeToPrint(color Color, text string) string {
 	for _, line := range lines {
 		parts := strings.SplitN(line, ": ", 2)
 		if len(parts) == 2 {
-			result += color.Render(parts[0] + ": ") + parts[1] + "\n"
+			result += color.Render(parts[0] + ": ") + parts[1]
 		} else {
-			result += color.Render(line) + "\n"
+			result += color.Render(line)
+		}
+		if line != lines[len(lines)-1] {
+			result += "\n"
 		}
 	}
 	return result
