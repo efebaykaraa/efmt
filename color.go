@@ -1,4 +1,4 @@
-package efmt
+package github.com/efexplose/efmt
 
 import "fmt"
 
@@ -7,15 +7,48 @@ type Color struct {
 }
 
 var (
+	// basic
 	Red   = Color{255, 0, 0}
 	Green = Color{0, 255, 0}
 	Blue  = Color{0, 0, 255}
+	Yellow = Color{255, 255, 0}
+	Cyan   = Color{0, 255, 255}
+	Magenta = Color{255, 0, 255}
 	White = Color{255, 255, 255}
 	Black = Color{0, 0, 0}
+
+	// gray
+	Gray = Color{128, 128, 128}
+	LightGray = Color{192, 192, 192}
+	DarkGray = Color{64, 64, 64}
+
+	// light
+	LightRed = Color{255, 128, 128}
+	LightGreen = Color{128, 255, 128}
+	LightBlue = Color{128, 128, 255}
+	LightYellow = Color{255, 255, 128}
+	LightCyan = Color{128, 255, 255}
+	LightMagenta = Color{255, 128, 255}
+
+	// dark
+	DarkRed = Color{128, 0, 0}
+	DarkGreen = Color{0, 128, 0}
+	DarkBlue = Color{0, 0, 128}
+	DarkYellow = Color{128, 128, 0}
+	DarkCyan = Color{0, 128, 128}
+	DarkMagenta = Color{128, 0, 128}
 )
 
 func NewColor(r, g, b int) Color {
 	return Color{r, g, b}
+}
+
+func HexColor(hex int) Color {
+	return Color{
+		R: (hex >> 16) & 0xFF,
+		G: (hex >> 8) & 0xFF,
+		B: hex & 0xFF,
+	}
 }
 
 func (color Color) Render(s string) string {

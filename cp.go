@@ -1,4 +1,4 @@
-package efmt
+package github.com/efexplose/efmt
 
 func (p *Printer) Printlnc(color Color, a ...any) {
 	p.Println(colorizeToPrint(color, strings.Split(fmt.Sprint(a...), "\n")))

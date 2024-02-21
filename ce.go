@@ -1,4 +1,4 @@
-package efmt
+package github.com/efexplose/efmt
 
 func (p *Printer) Errorfc(color Color, format string, a ...any) error {
 	return Errorf(colorizeToPrint(color, strings.Split(fmt.Sprintf(format, a...), "\n")))

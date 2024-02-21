@@ -1,4 +1,4 @@
-package efmt
+package github.com/efexplose/efmt
 
 func (p *Printer) Println(a ...any) {
 	fmt.Println(p.prefix + fmt.Sprint(a...))
