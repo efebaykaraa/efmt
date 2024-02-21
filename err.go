@@ -1,4 +1,4 @@
-package github.com/efexplose/efmt
+package efmt
 
 func (p *Printer) Errorf(format string, a ...any) error {
 	format = strings.ReplaceAll(format, "\n", "\n"+p.prefix)
