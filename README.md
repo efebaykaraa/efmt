@@ -21,6 +21,6 @@ if message != "expected" {
 ## Colors ##
 You can deal with colors easyly
 ```go
-p.Println(efmt.Yellow("Listening on: ", "127.0.0.1:1111")
+p.Println(efmt.Yellow, "Listening on: ", "127.0.0.1:1111")
 ```
 The code above automatically detects the header by spliting the string from both '\n' and ':'.
