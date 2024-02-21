@@ -10,21 +10,22 @@ Printing:
 ```go
 p.Println("Listening on: ", "127.0.0.1:1111")
 ```
-![Output](https://github.com/efexplose/efmt/.assets/prefix.png)
+![Output](https://github.com/efexplose/efmt/assets/52001980/977b60aa-bff8-4d58-ba73-b99b68e47cb1)
 Error handeling:
 ```go
+var err error
 message := "unexpected"
 if message != "expected" {
-  p.Errorf("Unexpected message: %s", message)
+  err := p.Errorf("Unexpected message: %s", message)
+  p.Println(err)
 }
 ```
-![Output](https://github.com/efexplose/efmt/.assets/error.png)
+![Output](https://github.com/efexplose/efmt/assets/52001980/2e526a47-0a6f-4381-bfe9-e1351abe9bfd)
 
 ## Colors ##
-You can deal with colors easyly
+Add 'c' at the end of the original name of the function
 ```go
-p.Println(efmt.Yellow, "Listening on: ", "127.0.0.1:1111")
+p.Printlnc(efmt.Yellow, "Listening on: ", "127.0.0.1:1111")
 ```
-![Output](https://github.com/efexplose/efmt/.assets/color.png)
+![Output](https://github.com/efexplose/efmt/assets/52001980/5834b852-eaa2-40e5-987a-63c6ea3e1226)
 The code above automatically detects the header by spliting the string from both '\n' and ':'.
-
