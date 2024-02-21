@@ -1,4 +1,4 @@
-package efmt
+package github.com/efexplose/efmt
 
 import (
 	"fmt"
