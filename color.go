@@ -1,6 +1,9 @@
 package efmt
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 type Color struct {
 	R, G, B int
@@ -55,6 +58,20 @@ func (color Color) Render(s string) string {
 	return fmt.Sprintf("\033[38;2;%d;%d;%dm%s\033[0m", color.R, color.G, color.B, s)
 }
 
+func colorizeToPrint(color Color, text string) string {
+	var result string
+	lines := strings.Split(text, "\n")
+	for _, line := range lines {
+		parts := strings.SplitN(line, ": ", 2)
+		if len(parts) == 2 {
+			result += color.Render(parts[0] + ": ") + parts[1] + "\n"
+		} else {
+			result += color.Render(line) + "\n"
+		}
+	}
+	return result
+}
+
 func (color Color) String() string {
-	return fmt.Sprintf(color.Render("Color(%d, %d, %d)"), color.R, color.G, color.B)
+	return color.Render(fmt.Sprintf("{R: %d, G: %d, B: %d}", color.R, color.G, color.B))
 }
