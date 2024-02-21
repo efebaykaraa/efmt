@@ -1,10 +1,5 @@
 package efmt
 
-import (
-	"fmt"
-	"strings"
-)
-
 type Printer struct {
 	prefix string
 }

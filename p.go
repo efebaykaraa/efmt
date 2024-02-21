@@ -1,5 +1,10 @@
 package efmt
 
+import (
+	"fmt"
+	"strings"
+)
+
 func (p *Printer) Println(a ...any) {
 	fmt.Println(p.prefix + fmt.Sprint(a...))
 }

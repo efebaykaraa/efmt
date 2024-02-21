@@ -1,5 +1,10 @@
 package efmt
 
+import (
+	"fmt"
+	"strings"
+)
+
 func (p *Printer) Printlnc(color Color, a ...any) {
 	p.Println(colorizeToPrint(color, strings.Split(fmt.Sprint(a...), "\n")))
 }
@@ -13,7 +18,7 @@ func colorizeToPrint(color Color, lines []string) string {
 	for _, line := range lines {
 		parts := strings.SplitN(line, ": ", 2)
 		if len(parts) == 2 {
-			result += color(parts[0]) + ": " + parts[1] + "\n"
+			result += color.Render(parts[0]) + ": " + parts[1] + "\n"
 		} else {
 			result += line + "\n"
 		}
