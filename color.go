@@ -68,9 +68,6 @@ func colorizeToPrint(color Color, text string) string {
 		} else {
 			result += color.Render(line)
 		}
-		if line != lines[len(lines)-1] {
-			result += "\n"
-		}
 	}
 	return result
 }
