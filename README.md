@@ -1,5 +1,7 @@
 # Basicly an extended fmt! #
 
+## Note: Not recommended! Developed based on private needs. Includes some little bugs that migh be annaying. ##
+
 ## PREFIX ##
 Imlementations for prefix handling.
 Define the printer:
