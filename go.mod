@@ -1,3 +1,3 @@
-module github.com/efexplose/efmt
+module github.com/efexplose/eftm
 
-go go 1.21.6
+go 1.21.6
