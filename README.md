@@ -1,6 +1,7 @@
-# Basicly an extended fmt! #
+# Basicly a better version of fmt #
 
-## Note: Not recommended! Developed based on private needs. Includes some little bugs that migh be annaying. ##
+> [!WARNING]
+> This package works great but isn't maintained a lot. So, if you'll use it. Remember that you will fix the bugs you'll face with.
 
 ## PREFIX ##
 Imlementations for prefix handling.
